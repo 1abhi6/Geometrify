@@ -18,6 +18,7 @@ setup(
     keywords=["2D geometry", "Coordinate geometry", "Coordinate datatype"],
     classifiers=[
         "Programming Language :: Python :: 3",
+        "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
