@@ -1,0 +1,8 @@
+LICENSE
+setup.py
+Geometrify/__init__.py
+Geometrify/geometry.py
+Geometrify.egg-info/PKG-INFO
+Geometrify.egg-info/SOURCES.txt
+Geometrify.egg-info/dependency_links.txt
+Geometrify.egg-info/top_level.txt

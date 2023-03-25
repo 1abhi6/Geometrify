@@ -1,3 +1,18 @@
+Metadata-Version: 2.1
+Name: Geometrify
+Version: 0.0.3
+Summary: Geometrify is a Python package for easy creation, manipulation, and analysis of 2D geometries, providing comprehensive tools for various operations
+Home-page: https://github.com/1abhi6/Geometrify
+Author: Abhishek Santosh Gupta
+Author-email: abhi@getifyme.com
+Keywords: 2D geometry,Coordinate geometry,Coordinate datatype
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE
+
 ---------------
 # Geometrify
 ---------------

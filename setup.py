@@ -6,14 +6,14 @@ with open("README.rst", "r") as fh:
 
 setup(
     name="Geometrify",
-    version="0.0.1",
+    version="0.0.3",
     description="Geometrify is a Python package for easy creation, manipulation, and analysis of 2D geometries, providing comprehensive tools for various operations",
     author="Abhishek Santosh Gupta",
     author_email="abhi@getifyme.com",
     url="https://github.com/1abhi6/Geometrify",
     long_description=long_description,
-    packages=setuptools.find_packages(where="src"),
-    package_dir={"": "src"},
+    packages=setuptools.find_packages(),
+    # package_dir={"": "src"},
     include_package_data=True,
     keywords=["2D geometry", "Coordinate geometry", "Coordinate datatype"],
     classifiers=[
