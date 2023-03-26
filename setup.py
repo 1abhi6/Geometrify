@@ -1,19 +1,18 @@
 from setuptools import setup
 import setuptools
 
-with open("README.rst", "r") as fh:
+with open("Readme.rst", "r") as fh:
     long_description = fh.read()
 
 setup(
     name="Geometrify",
-    version="0.0.3",
+    version="0.0.5",
     description="Geometrify is a Python package for easy creation, manipulation, and analysis of 2D geometries, providing comprehensive tools for various operations",
     author="Abhishek Santosh Gupta",
     author_email="abhi@getifyme.com",
     url="https://github.com/1abhi6/Geometrify",
     long_description=long_description,
     packages=setuptools.find_packages(),
-    # package_dir={"": "src"},
     include_package_data=True,
     keywords=["2D geometry", "Coordinate geometry", "Coordinate datatype"],
     classifiers=[

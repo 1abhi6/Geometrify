@@ -8,7 +8,6 @@ class Coordinate():
         x (float or int): The x-coordinate of the point.
         y (float or int): The y-coordinate of the point.
     """
-
     def __init__(self, x, y):
         """
         Initializes a new instance of the Coordinate class.
