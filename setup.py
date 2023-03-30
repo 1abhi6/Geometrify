@@ -21,7 +21,7 @@ SHORT_DESCRIPTION = """Geometrify is a Python package for easy creation, manipul
 
 setup(
     name="Geometrify",
-    version="0.0.5",
+    version="1.0.3",
     description=SHORT_DESCRIPTION,
     author="Abhishek Santosh Gupta",
     author_email="abhi@getifyme.com",
@@ -29,6 +29,7 @@ setup(
     long_description=long_description,
     packages=setuptools.find_packages(),
     include_package_data=True,
+    license="MIT",
     keywords=["2D geometry", "Coordinate geometry", "Coordinate datatype"],
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -20,7 +20,7 @@ Example
 
 .. code-block:: python
 
-    from Geometrify import Coordinate
+    from Geometrify.geometry import Coordinate
 
     # Create two coordinate points
     point1 = Coordinate(1, 2)

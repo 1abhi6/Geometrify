@@ -1,10 +1,11 @@
 Metadata-Version: 2.1
 Name: Geometrify
-Version: 0.0.5
-Summary: Geometrify is a Python package for easy creation, manipulation, and analysis of 2D geometries, providing comprehensive tools for various operations
+Version: 1.0.3
+Summary: Geometrify is a Python package for easy creation, manipulation,
 Home-page: https://github.com/1abhi6/Geometrify
 Author: Abhishek Santosh Gupta
 Author-email: abhi@getifyme.com
+License: MIT
 Keywords: 2D geometry,Coordinate geometry,Coordinate datatype
 Classifier: Programming Language :: Python :: 3
 Classifier: Intended Audience :: Developers
@@ -83,7 +84,7 @@ Angle calculation with respect to positive X-axis
 
 .. code-block:: python
 
-    point2.angle_with_positive_X(point3) # 18.435
+    point2.angle_with_positive_x(point3) # 18.435
 
 
 Angle calculation with respect to positive Y-axis
@@ -91,7 +92,7 @@ Angle calculation with respect to positive Y-axis
 
 .. code-block:: python
 
-    point2.angle_with_positive_Y(point3) # 71.565
+    point2.angle_with_positive_y(point3) # 71.565
 
 
 Angle between two lines given their slopes

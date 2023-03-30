@@ -14,7 +14,7 @@ pip install Geometrify
 ## Example
 
 ```
-from GeometrifY import Coordinate
+from Geometrify.geometry import Coordinate
 
 # Create two coordinate points
 point1 = Coordinate(1, 2)
