@@ -1,4 +1,8 @@
+"""
+    The math module provides various mathematical functions for numeric operations.
+"""
 import math
+
 
 class Coordinate():
     """
@@ -8,7 +12,8 @@ class Coordinate():
         x (float or int): The x-coordinate of the point.
         y (float or int): The y-coordinate of the point.
     """
-    def __init__(self, x, y):
+
+    def __init__(self, x_axis, y_axis):
         """
         Initializes a new instance of the Coordinate class.
 
@@ -16,8 +21,8 @@ class Coordinate():
             x (float or int): The x-coordinate of the point.
             y (float or int): The y-coordinate of the point.
         """
-        self.x = x
-        self.y = y
+        self.x_axis = x_axis
+        self.y_axis = y_axis
 
     def __str__(self):
         """
@@ -26,9 +31,9 @@ class Coordinate():
         Returns:
             A string in the format "(x,y)".
         """
-        return f"({self.x},{self.y})"
+        return f"({self.x_axis},{self.y_axis})"
 
-    # Basic operations such as addition, substraction, multiplication and division of the coordinates
+    # Basic operations such as addition, substraction, multiplication & division of the coordinates
     def __add__(self, other):
         """
         Adds the coordinates of two Coordinate objects and returns a new Coordinate object.
@@ -39,7 +44,7 @@ class Coordinate():
         Returns:
             A new Coordinate object representing the sum of the two coordinates.
         """
-        return Coordinate(self.x + other.x, self.y + other.y)
+        return Coordinate(self.x_axis + other.x, self.y_axis + other.y)
 
     def __sub__(self, other):
         """
@@ -51,7 +56,7 @@ class Coordinate():
         Returns:
             A new Coordinate object representing the difference between the two coordinates.
         """
-        return Coordinate(self.x - other.x, self.y - other.y)
+        return Coordinate(self.x_axis - other.x, self.y_axis - other.y)
 
     def __mul__(self, other):
         """
@@ -61,9 +66,9 @@ class Coordinate():
             other: The other Coordinate object to multiply with this one.
 
         Returns:
-            A new Coordinate object representing the element-wise product between the two coordinates.
+            A new Coordinate object representing the element-wise product between two coordinates.
         """
-        return Coordinate(self.x * other.x, self.y * other.y)
+        return Coordinate(self.x_axis * other.x, self.y_axis * other.y)
 
     def __truediv__(self, other):
         """
@@ -73,9 +78,9 @@ class Coordinate():
             other: The other Coordinate object to divide this one by.
 
         Returns:
-            A new Coordinate object representing the element-wise division between the two coordinates.
+            A new Coordinate object representing the element-wise division between two coordinates.
         """
-        return Coordinate(self.x / other.x, self.y / other.y)
+        return Coordinate(self.x_axis / other.x, self.y_axis / other.y)
 
     # Distance calculation
     def distance(self, other):
@@ -88,7 +93,7 @@ class Coordinate():
         Returns:
             The distance between the two coordinates as a float.
         """
-        return round(((self.x - other.x) ** 2 + (self.y - other.y) ** 2) ** 0.5, 3)
+        return round(((self.x_axis - other.x) ** 2 + (self.y_axis - other.y) ** 2) ** 0.5, 3)
 
     # Midpoint calculation
     def midpoint(self, other):
@@ -101,7 +106,7 @@ class Coordinate():
         Returns:
             A new Coordinate object representing the midpoint between this coordinate and the other.
         """
-        return Coordinate((self.x + other.x) / 2, (self.y + other.y) / 2)
+        return Coordinate((self.x_axis + other.x) / 2, (self.y_axis + other.y) / 2)
 
     # Slope calculation
     def slope(self, other):
@@ -112,17 +117,17 @@ class Coordinate():
             other (Coordinate): The other Coordinate object to calculate the slope with.
 
         Returns:
-            The slope between this coordinate and the other as a float. If the x-coordinates are equal, returns infinity.
+            The slope between this coordinate and the other as a float. 
+            If the x-coordinates are equal, returns infinity.
         """
-        if self.x == other.x:
+        if self.x_axis == other.x:
             # The x coordinates are the same, so the slope is undefined
             return math.inf
-        else:
-            return round((other.y - self.y) / (other.x - self.x), 3)
+        return round((other.y - self.y_axis) / (other.x - self.x_axis), 3)
 
     # Angle calculation with respect to positive X axis
 
-    def angle_with_positive_X(self, other):
+    def angle_with_positive_x(self, other):
         """
         Calculates the angle of line with respect to positive X axis
 
@@ -132,14 +137,14 @@ class Coordinate():
         Returns:
             The angle of line with respect to positive X axis in degrees as a float.
         """
-        dx = other.x - self.x
-        dy = other.y - self.y
-        radians = math.atan2(dy, dx)
+        dx_axis = other.x - self.x_axis
+        dy_axis = other.y - self.y_axis
+        radians = math.atan2(dy_axis, dx_axis)
         degrees = round(math.degrees(radians), 3)
         return degrees
 
     # Angle calculation with respect to positive Y axis
-    def angle_with_positive_Y(self, other):
+    def angle_with_positive_y(self, other):
         """
         Calculates the angle of line with respect to positive Y axis
 
@@ -149,12 +154,12 @@ class Coordinate():
         Returns:
             The angle of line with respect to positive Y axis in degrees as a float.
         """
-        angle = self.angle_with_positive_X(other)
-        return (90-angle)
+        angle = self.angle_with_positive_x(other)
+        return 90-angle
 
     # Angle between two lines given their slopes
     @staticmethod
-    def angle_between_slopes(m1, m2):
+    def angle_between_slopes(slope_m1, slope_m2):
         """
         Calculates the angle between two lines given their slopes.
 
@@ -165,7 +170,7 @@ class Coordinate():
         Returns:
             The angle between the two lines in degrees as float.
         """
-        angle = abs((m2 - m1) / (1 + m1 * m2))
+        angle = abs((slope_m2 - slope_m1) / (1 + slope_m1 * slope_m2))
 
         # Calculate tan inverse of the angle
         ret = math.atan(angle)
@@ -186,7 +191,12 @@ class Coordinate():
         Returns:
             The area of the triangle formed by the three coordinates.
         """
-        return abs((self.x * (other1.y - other2.y) + other1.x * (other2.y - self.y) + other2.x * (self.y - other1.y)) / 2)
+        traingle_area = abs(
+            (self.x_axis * (other1.y - other2.y) +
+             other1.x * (other2.y - self.y_axis) +
+             other2.x * (self.y_axis - other1.y)) / 2
+        )
+        return traingle_area
 
     # Reflect a point about a line
 
@@ -205,18 +215,19 @@ class Coordinate():
         slope = line_start.slope(line_end)
         intercept = line_start.y - slope * line_start.x
 
-        # Calculate the slope and y-intercept of the perpendicular bisector passing through the given point
+        # Calculate the slope and y-intercept of the perpendicular bisector passing through
+        # the given point
         perpendicular_slope = -1 / slope
-        perpendicular_intercept = self.y - perpendicular_slope * self.x
+        perpendicular_intercept = self.y_axis - perpendicular_slope * self.x_axis
         intersection_x = (perpendicular_intercept - intercept) / \
             (slope - perpendicular_slope)
         intersection_y = slope * intersection_x + intercept
-        reflected_x = round(2 * intersection_x - self.x, 3)
-        reflected_y = round(2 * intersection_y - self.y, 3)
+        reflected_x = round(2 * intersection_x - self.x_axis, 3)
+        reflected_y = round(2 * intersection_y - self.y_axis, 3)
         return Coordinate(reflected_x, reflected_y)
 
     # Translate a point
-    def translate(self, dx, dy):
+    def translate(self, translate_dx, translate_dy):
         """
         Translates the Coordinate object by a given amount.
 
@@ -227,7 +238,7 @@ class Coordinate():
         Returns:
             Coordinate: A new Coordinate object representing the translated point.
         """
-        return Coordinate(self.x + dx, self.y + dy)
+        return Coordinate(self.x_axis + translate_dx, self.y_axis + translate_dy)
 
     # Scale a point
     def scale(self, factor):
@@ -240,7 +251,7 @@ class Coordinate():
         Returns:
             Coordinate: A new instance of the Coordinate class representing the scaled point.
         """
-        return Coordinate(self.x * factor, self.y * factor)
+        return Coordinate(self.x_axis * factor, self.y_axis * factor)
 
     # Find the intersection point of two lines
     @staticmethod
@@ -279,8 +290,8 @@ class Coordinate():
         Returns:
             float: The distance from the current point to the line.
         """
-        numerator = abs((line_end.y - line_start.y) * self.x - (line_end.x - line_start.x)
-                        * self.y + line_end.x * line_start.y - line_end.y * line_start.x)
+        numerator = abs((line_end.y - line_start.y) * self.x_axis - (line_end.x - line_start.x)
+                        * self.y_axis + line_end.x * line_start.y - line_end.y * line_start.x)
         denominator = ((line_end.y - line_start.y) ** 2 +
                        (line_end.x - line_start.x) ** 2) ** 0.5
         return round((numerator / denominator), 3)
@@ -297,7 +308,7 @@ class Coordinate():
             str: A string representation of the equation of the line.
         """
         slope = round(self.slope(point2), 3)
-        intercept = round(self.y - slope * self.x, 3)
+        intercept = round(self.y_axis - slope * self.x_axis, 3)
         return f"y = {slope}x + ({intercept})"
 
     # Find the area of quadrilateral created by four points
@@ -318,7 +329,10 @@ class Coordinate():
         side3 = point3.distance(point4)
         side4 = point4.distance(self)
         side = (side1 + side2 + side3 + side4) / 2
-        return round(math.sqrt((side - side1) * (side - side2) * (side - side3) * (side - side4)), 3)
+        return round(
+            math.sqrt((side - side1) * (side - side2) *
+                      (side - side3) * (side - side4)), 3
+        )
 
     # Find the perimeter of quadrilateral created by four points
 
@@ -334,4 +348,7 @@ class Coordinate():
         Returns:
             The perimeter of the quadrilateral as a float.
         """
-        return round(self.distance(point2) + point2.distance(point3) + point3.distance(point4) + point4.distance(self), 3)
+        return round(
+            self.distance(point2) + point2.distance(point3) +
+            point3.distance(point4) + point4.distance(self), 3
+        )

@@ -20,7 +20,7 @@ Example
 
 .. code-block:: python
 
-    from Geometrify.geometry import Coordinate
+    from Geometrify import Coordinate
 
     # Create two coordinate points
     point1 = Coordinate(1, 2)
@@ -68,7 +68,7 @@ Angle calculation with respect to positive X-axis
 
 .. code-block:: python
 
-    point2.angle_with_positive_X(point3) # 18.435
+    point2.angle_with_positive_x(point3) # 18.435
 
 
 Angle calculation with respect to positive Y-axis
@@ -76,7 +76,7 @@ Angle calculation with respect to positive Y-axis
 
 .. code-block:: python
 
-    point2.angle_with_positive_Y(point3) # 71.565
+    point2.angle_with_positive_y(point3) # 71.565
 
 
 Angle between two lines given their slopes

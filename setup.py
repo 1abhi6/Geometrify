@@ -1,13 +1,28 @@
+"""
+Geometrify package setup file.
+
+This file imports the necessary setup function from setuptools module, reads
+the content of Readme.rst file and passes it as long description, 
+and defines package name, version, description, author, author email, url, packages, 
+package data, keywords, classifiers, and requirements.
+
+For more information about the package, please visit https://github.com/1abhi6/Geometrify.
+"""
+
 from setuptools import setup
 import setuptools
 
-with open("Readme.rst", "r") as fh:
+with open("Readme.rst", "r", encoding="utf-8") as fh:
     long_description = fh.read()
+
+SHORT_DESCRIPTION = """Geometrify is a Python package for easy creation, manipulation,
+                        and analysis of 2D geometries.
+                    """
 
 setup(
     name="Geometrify",
     version="0.0.5",
-    description="Geometrify is a Python package for easy creation, manipulation, and analysis of 2D geometries, providing comprehensive tools for various operations",
+    description=SHORT_DESCRIPTION,
     author="Abhishek Santosh Gupta",
     author_email="abhi@getifyme.com",
     url="https://github.com/1abhi6/Geometrify",
