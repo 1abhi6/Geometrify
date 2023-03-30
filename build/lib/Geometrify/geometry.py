@@ -44,7 +44,7 @@ class Coordinate():
         Returns:
             A new Coordinate object representing the sum of the two coordinates.
         """
-        return Coordinate(self.x_axis + other.x, self.y_axis + other.y)
+        return Coordinate(self.x_axis + other.x_axis, self.y_axis + other.y_axis)
 
     def __sub__(self, other):
         """
@@ -56,7 +56,7 @@ class Coordinate():
         Returns:
             A new Coordinate object representing the difference between the two coordinates.
         """
-        return Coordinate(self.x_axis - other.x, self.y_axis - other.y)
+        return Coordinate(self.x_axis - other.x_axis, self.y_axis - other.y_axis)
 
     def __mul__(self, other):
         """
@@ -68,7 +68,7 @@ class Coordinate():
         Returns:
             A new Coordinate object representing the element-wise product between two coordinates.
         """
-        return Coordinate(self.x_axis * other.x, self.y_axis * other.y)
+        return Coordinate(self.x_axis * other.x_axis, self.y_axis * other.y_axis)
 
     def __truediv__(self, other):
         """
@@ -80,7 +80,7 @@ class Coordinate():
         Returns:
             A new Coordinate object representing the element-wise division between two coordinates.
         """
-        return Coordinate(self.x_axis / other.x, self.y_axis / other.y)
+        return Coordinate(self.x_axis / other.x_axis, self.y_axis / other.y_axis)
 
     # Distance calculation
     def distance(self, other):
@@ -93,7 +93,8 @@ class Coordinate():
         Returns:
             The distance between the two coordinates as a float.
         """
-        return round(((self.x_axis - other.x) ** 2 + (self.y_axis - other.y) ** 2) ** 0.5, 3)
+        return round(
+            ((self.x_axis - other.x_axis) ** 2 + (self.y_axis - other.y_axis) ** 2) ** 0.5, 3)
 
     # Midpoint calculation
     def midpoint(self, other):
@@ -106,7 +107,7 @@ class Coordinate():
         Returns:
             A new Coordinate object representing the midpoint between this coordinate and the other.
         """
-        return Coordinate((self.x_axis + other.x) / 2, (self.y_axis + other.y) / 2)
+        return Coordinate((self.x_axis + other.x_axis) / 2, (self.y_axis + other.y_axis) / 2)
 
     # Slope calculation
     def slope(self, other):
@@ -120,10 +121,10 @@ class Coordinate():
             The slope between this coordinate and the other as a float. 
             If the x-coordinates are equal, returns infinity.
         """
-        if self.x_axis == other.x:
+        if self.x_axis == other.x_axis:
             # The x coordinates are the same, so the slope is undefined
             return math.inf
-        return round((other.y - self.y_axis) / (other.x - self.x_axis), 3)
+        return round((other.y_axis - self.y_axis) / (other.x_axis - self.x_axis), 3)
 
     # Angle calculation with respect to positive X axis
 
@@ -137,8 +138,8 @@ class Coordinate():
         Returns:
             The angle of line with respect to positive X axis in degrees as a float.
         """
-        dx_axis = other.x - self.x_axis
-        dy_axis = other.y - self.y_axis
+        dx_axis = other.x_axis - self.x_axis
+        dy_axis = other.y_axis - self.y_axis
         radians = math.atan2(dy_axis, dx_axis)
         degrees = round(math.degrees(radians), 3)
         return degrees

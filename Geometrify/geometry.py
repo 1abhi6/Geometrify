@@ -93,7 +93,8 @@ class Coordinate():
         Returns:
             The distance between the two coordinates as a float.
         """
-        return round(((self.x_axis - other.x_axis) ** 2 + (self.y_axis - other.y_axis) ** 2) ** 0.5, 3)
+        return round(
+            ((self.x_axis - other.x_axis) ** 2 + (self.y_axis - other.y_axis) ** 2) ** 0.5, 3)
 
     # Midpoint calculation
     def midpoint(self, other):
