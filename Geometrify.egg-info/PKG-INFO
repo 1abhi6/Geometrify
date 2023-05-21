@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: Geometrify
-Version: 1.0.4
+Version: 1.0.5
 Summary: Geometrify is a Python package for easy creation, manipulation,
 Home-page: https://github.com/1abhi6/Geometrify
 Author: Abhishek Santosh Gupta
@@ -36,7 +36,7 @@ Example
 
 .. code-block:: python
 
-    from Geometrify.geometry import Coordinate
+    from Geometrify import Coordinate
 
     # Create two coordinate points
     point1 = Coordinate(1, 2)
