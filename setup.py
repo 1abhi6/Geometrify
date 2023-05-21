@@ -21,7 +21,7 @@ SHORT_DESCRIPTION = """Geometrify is a Python package for easy creation, manipul
 
 setup(
     name="Geometrify",
-    version="1.0.4",
+    version="1.0.5",
     description=SHORT_DESCRIPTION,
     author="Abhishek Santosh Gupta",
     author_email="abhi@getifyme.com",
