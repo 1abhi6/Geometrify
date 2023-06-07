@@ -2,8 +2,8 @@
 
 Geometrify is a Python package for working with 2D coordinate geometry. It provides a comprehensive set of tools for performing operations such as distance calculation, angle measurement, rotation, translation, and scaling of geometries. With Geometrify, you can easily create, manipulate, and analyze complex 2D geometries with ease.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)]
-[![Version](https://img.shields.io/pypi/v/Geometrify)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/pypi/v/Geometrify)
 
 ## Usage
 
